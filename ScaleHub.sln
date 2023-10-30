@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScaleHub.SampleWebApp", "ScaleHub.SampleWebApp\ScaleHub.SampleWebApp.csproj", "{859158EA-AE53-4129-883F-D67D327971E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScaleHub.Core", "ScaleHub.Core\ScaleHub.Core.csproj", "{398BE794-4FC5-40F9-B8C1-E1066CC4A569}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScaleHub.DependecyInjection", "ScaleHub.DependecyInjection\ScaleHub.DependecyInjection.csproj", "{E60C820A-0C3B-4B83-8DCE-E441639A002B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScaleHub.SqlServer", "ScaleHub.SqlServer\ScaleHub.SqlServer.csproj", "{384499E7-8DBB-4D93-BA97-5965CF991434}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{72DD3AC3-55C4-46C4-8353-02AB86FE5D58}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{91F077B1-A79D-45C3-B123-8BBE53750493}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample", "sample", "{CC5FAAB5-4910-4552-8E1C-6D3C50BF85CC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{555E75F1-2072-4FD9-B5F1-D5540F0DAC5F}"
+	ProjectSection(SolutionItems) = preProject
+		docs\daisy.png = docs\daisy.png
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{859158EA-AE53-4129-883F-D67D327971E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{859158EA-AE53-4129-883F-D67D327971E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{859158EA-AE53-4129-883F-D67D327971E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{859158EA-AE53-4129-883F-D67D327971E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{398BE794-4FC5-40F9-B8C1-E1066CC4A569}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{398BE794-4FC5-40F9-B8C1-E1066CC4A569}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{398BE794-4FC5-40F9-B8C1-E1066CC4A569}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{398BE794-4FC5-40F9-B8C1-E1066CC4A569}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E60C820A-0C3B-4B83-8DCE-E441639A002B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E60C820A-0C3B-4B83-8DCE-E441639A002B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E60C820A-0C3B-4B83-8DCE-E441639A002B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E60C820A-0C3B-4B83-8DCE-E441639A002B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{384499E7-8DBB-4D93-BA97-5965CF991434}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{384499E7-8DBB-4D93-BA97-5965CF991434}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{384499E7-8DBB-4D93-BA97-5965CF991434}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{384499E7-8DBB-4D93-BA97-5965CF991434}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91F077B1-A79D-45C3-B123-8BBE53750493}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91F077B1-A79D-45C3-B123-8BBE53750493}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91F077B1-A79D-45C3-B123-8BBE53750493}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91F077B1-A79D-45C3-B123-8BBE53750493}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{859158EA-AE53-4129-883F-D67D327971E7} = {CC5FAAB5-4910-4552-8E1C-6D3C50BF85CC}
+		{398BE794-4FC5-40F9-B8C1-E1066CC4A569} = {72DD3AC3-55C4-46C4-8353-02AB86FE5D58}
+		{E60C820A-0C3B-4B83-8DCE-E441639A002B} = {72DD3AC3-55C4-46C4-8353-02AB86FE5D58}
+		{384499E7-8DBB-4D93-BA97-5965CF991434} = {72DD3AC3-55C4-46C4-8353-02AB86FE5D58}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7CC6AE26-8C11-42DD-8283-FF29ABE82017}
+	EndGlobalSection
+EndGlobal

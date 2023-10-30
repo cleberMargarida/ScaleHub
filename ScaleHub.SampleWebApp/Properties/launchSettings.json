@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "ScaleHub.SampleWebApp": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:56669;http://localhost:56670"
+    }
+  }
+}

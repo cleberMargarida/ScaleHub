@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	<PackageReadmeFile>README.md</PackageReadmeFile>
+	<Version>0.1.0</Version>
+	<Authors>Cleber Margarida</Authors>
+	<Description>$(AssemblyName) SQL Server integration for ScaleHub.</Description>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	<RepositoryUrl>https://github.com/cleberMargarida/ScaleHub/tree/master/ScaleHub.SqlServer</RepositoryUrl>
+	<PackageProjectUrl>https://github.com/cleberMargarida/ScaleHub/tree/master/ScaleHub.SqlServer</PackageProjectUrl>
+	<PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+	<PackageIcon>daisy.png</PackageIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="EnableBroker.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Data\EnableBroker.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\docs\daisy.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.0" />
+    <PackageReference Include="ScaleHub.DependecyInjection" Version="0.1.0" />
+	<PackageReference Include="SqlTableDependency" Version="8.5.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>

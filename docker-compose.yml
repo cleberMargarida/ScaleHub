@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2017-CU8-ubuntu
+
+  scalehub.samplewebapp:
+    image: ${DOCKER_REGISTRY-}scalehubsamplewebapp
+    build:
+      context: .
+      dockerfile: ScaleHub.SampleWebApp/Dockerfile
+    environment:
+      ConnectionStrings__ScaleHub: Data Source=sqlserver;Initial Catalog=scalehub;Persist Security Info=True;User ID=sa;Password=yourStrong(!)Password;
+    depends_on:
+      - sqlserver

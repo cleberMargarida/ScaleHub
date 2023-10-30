@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	<PackageReadmeFile>README.md</PackageReadmeFile>
+	<Version>0.1.0</Version>
+	<Authors>Cleber Margarida</Authors>
+	<Description>$(AssemblyName) ScaleHub extension for Microsoft.Extensions.DependencyInjection.</Description>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	<RepositoryUrl>https://github.com/cleberMargarida/ScaleHub/tree/master/ScaleHub.DependecyInjection</RepositoryUrl>
+	<PackageProjectUrl>https://github.com/cleberMargarida/ScaleHub/tree/master/ScaleHub.DependecyInjection</PackageProjectUrl>
+	<PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+	<PackageIcon>daisy.png</PackageIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\docs\daisy.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="ScaleHub.Core" Version="0.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
