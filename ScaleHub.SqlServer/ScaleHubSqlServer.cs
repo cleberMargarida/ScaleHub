@@ -2,6 +2,7 @@
 
 using Microsoft.Data.SqlClient;
 using ScaleHub.Core;
+using ScaleHub.Core.Abstract;
 using ScaleHub.SqlServer.Data;
 using ScaleHub.SqlServer.Helpers;
 using System.Net;
@@ -16,6 +17,7 @@ namespace ScaleHub.SqlServer
     /// </summary>
     internal class ScaleHubSqlServer : ScaleHubBase, IScaleHub, IDisposable
     {
+        private readonly ISetup setup;
         private readonly ScaleHubDbContext context;
         private readonly ServerInfo server;
         private readonly Task initializing;
@@ -23,8 +25,10 @@ namespace ScaleHub.SqlServer
         /// <summary>
         /// Initializes a new instance of the <see cref="ScaleHubSqlServer"/> class.
         /// </summary>
-        public ScaleHubSqlServer()
+        public ScaleHubSqlServer(ISetup setup)
         {
+            this.setup = setup;
+            (setup as ScaleHubConfiguration)?.Subscription(this);
             this.context = new ScaleHubDbContext();
             this.server = GetServerInfo();
             this.initializing = EnsureDatabaseDependenciesAsync();
@@ -33,7 +37,11 @@ namespace ScaleHub.SqlServer
         /// <inheritdoc />
         public override ScaleContext GetContext()
         {
-            var servers = this.context.Servers.ToList();
+            var servers = this.context
+                              .Servers
+                              .Where(s => s.Tag == this.setup.Tag)
+                              .ToList();
+
             var actual = servers.FindServer(server);
             var actualIndex = servers.IndexOf(actual);
             return new ScaleContext { Actual = actualIndex + 1, Replicas = servers.Count };
@@ -51,7 +59,10 @@ namespace ScaleHub.SqlServer
         /// <inheritdoc />
         public override async Task Unsubscribe(CancellationToken cancellationToken)
         {
-            var server = context.Servers.FindServer(this.server);
+            var server = context.Servers
+                                .Where(s => s.Tag == this.setup.Tag)
+                                .FindServer(this.server);
+
             context.Servers.Remove(server);
             await this.context.SaveChangesAsync(cancellationToken);
         }
@@ -88,7 +99,7 @@ namespace ScaleHub.SqlServer
         {
             using var tableDependecy = new SqlTableDependency<ServerInfo>(
                   ScaleHubDbContext.ConnString
-                , nameof(ScaleHubDbContext.Servers));
+                , ScaleHubDbContext.ServersTable);
 
             tableDependecy.OnChanged += NotifyChange;
             tableDependecy.Start();
@@ -104,6 +115,11 @@ namespace ScaleHub.SqlServer
         /// <param name="e">The event arguments containing information about the record change.</param>
         private void NotifyChange(object sender, RecordChangedEventArgs<ServerInfo> e)
         {
+            if (e.Entity.Tag != this.setup.Tag)
+            {
+                return;
+            }
+            
             NotifyChange(e);
         }
 
@@ -125,7 +141,13 @@ namespace ScaleHub.SqlServer
         {
             var hostName = Dns.GetHostName();
             var hostEntry = Dns.GetHostEntry(hostName);
-            return new ServerInfo { HostName = hostName, Ip = hostEntry.AddressList[0].ToString() };
+
+            return new ServerInfo
+            {
+                HostName = hostName,
+                Ip = hostEntry.AddressList[0].ToString(),
+                Tag = setup.Tag
+            };
         }
 
         /// <inheritdoc />

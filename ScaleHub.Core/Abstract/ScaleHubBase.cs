@@ -11,7 +11,6 @@ namespace ScaleHub.SqlServer
         public event ScaleHubEventHandler? OnSubscribing;
 
         /// <inheritdoc/>
-
         public event ScaleHubEventHandler? OnUnsubscribing;
 
         /// <inheritdoc/>
