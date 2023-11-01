@@ -19,6 +19,10 @@
         /// Gets or sets the IP address of the server.
         /// </summary>
         public string Ip { get; set; } = default!;
-    }
 
+        /// <summary>
+        /// Gets or sets the Tag to differ the service.
+        /// </summary>
+        public string Tag { get; set; } = default!;
+    }
 }

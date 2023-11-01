@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	<PackageReadmeFile>README.md</PackageReadmeFile>
-	<Version>0.1.0</Version>
+	<Version>0.1.2</Version>
 	<Authors>Cleber Margarida</Authors>
 	<Description>$(AssemblyName) SQL Server integration for ScaleHub.</Description>
 	<PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -35,7 +35,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.0" />
-    <PackageReference Include="ScaleHub.DependecyInjection" Version="0.1.0" />
+    <PackageReference Include="ScaleHub.DependecyInjection" Version="0.1.2" />
 	<PackageReference Include="SqlTableDependency" Version="8.5.8" />
   </ItemGroup>
 

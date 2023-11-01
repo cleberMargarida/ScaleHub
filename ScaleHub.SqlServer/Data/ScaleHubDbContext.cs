@@ -8,6 +8,8 @@ namespace ScaleHub.SqlServer.Data
     /// </summary>
     internal class ScaleHubDbContext : DbContext
     {
+        internal const string ServersTable = "__SCALE__SERVERS__";
+
         /// <summary>
         /// Gets or sets the connection string for the database.
         /// </summary>
@@ -17,6 +19,11 @@ namespace ScaleHub.SqlServer.Data
         /// Gets or sets the DbSet for storing server information.
         /// </summary>
         public DbSet<ServerInfo> Servers { get; set; } = default!;
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<ServerInfo>().ToTable(ServersTable);
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -1,6 +1,7 @@
 ﻿#pragma warning disable CS8604
 
 using ScaleHub.Core;
+using ScaleHub.Core.Abstract;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -39,9 +40,8 @@ namespace Microsoft.Extensions.DependencyInjection
 
         private static IServiceCollection AddScaleHub(IServiceCollection services)
         {
-            var scaleHub = Activator.CreateInstance(ScaleHubConfiguration.Default.ScaleHub);
-            ScaleHubConfiguration.Default.Subscription(scaleHub as IChannel);
-            services.AddSingleton(typeof(IScaleHub), scaleHub);
+            services.AddSingleton<ISetup>(ScaleHubConfiguration.Default);
+            services.AddSingleton(typeof(IScaleHub), ScaleHubConfiguration.Default.ScaleHub);
             services.AddHostedService<ScaleHubBackgroundService>();
             return services;
         }
