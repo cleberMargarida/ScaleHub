@@ -44,7 +44,7 @@ namespace ScaleHub.SqlServer
 
             var actual = servers.FindServer(server);
             var actualIndex = servers.IndexOf(actual);
-            return new ScaleContext { Actual = actualIndex + 1, Replicas = servers.Count };
+            return new ScaleContext { Actual = ++actualIndex, Replicas = servers.Count };
         }
 
         /// <inheritdoc />
@@ -59,9 +59,10 @@ namespace ScaleHub.SqlServer
         /// <inheritdoc />
         public override async Task Unsubscribe(CancellationToken cancellationToken)
         {
-            var server = context.Servers
-                                .Where(s => s.Tag == this.setup.Tag)
-                                .FindServer(this.server);
+            var server = this.context
+                             .Servers
+                             .Where(s => s.Tag == this.setup.Tag)
+                             .FindServer(this.server);
 
             context.Servers.Remove(server);
             await this.context.SaveChangesAsync(cancellationToken);

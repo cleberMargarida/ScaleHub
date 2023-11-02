@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScaleHub.SampleWebApp", "ScaleHub.SampleWebApp\ScaleHub.SampleWebApp.csproj", "{859158EA-AE53-4129-883F-D67D327971E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScaleHub.SampleWebApp", "ScaleHub.SampleWebApp\ScaleHub.SampleWebApp.csproj", "{859158EA-AE53-4129-883F-D67D327971E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScaleHub.Core", "ScaleHub.Core\ScaleHub.Core.csproj", "{398BE794-4FC5-40F9-B8C1-E1066CC4A569}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScaleHub.Core", "ScaleHub.Core\ScaleHub.Core.csproj", "{398BE794-4FC5-40F9-B8C1-E1066CC4A569}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScaleHub.DependecyInjection", "ScaleHub.DependecyInjection\ScaleHub.DependecyInjection.csproj", "{E60C820A-0C3B-4B83-8DCE-E441639A002B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScaleHub.DependecyInjection", "ScaleHub.DependecyInjection\ScaleHub.DependecyInjection.csproj", "{E60C820A-0C3B-4B83-8DCE-E441639A002B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScaleHub.SqlServer", "ScaleHub.SqlServer\ScaleHub.SqlServer.csproj", "{384499E7-8DBB-4D93-BA97-5965CF991434}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScaleHub.SqlServer", "ScaleHub.SqlServer\ScaleHub.SqlServer.csproj", "{384499E7-8DBB-4D93-BA97-5965CF991434}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{72DD3AC3-55C4-46C4-8353-02AB86FE5D58}"
 EndProject
@@ -21,6 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{555E75F1-2
 	ProjectSection(SolutionItems) = preProject
 		docs\daisy.png = docs\daisy.png
 		README.md = README.md
+		docs\notes.md = docs\notes.md
 	EndProjectSection
 EndProject
 Global
