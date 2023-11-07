@@ -8,12 +8,13 @@ namespace ScaleHub.SqlServer.Data
     /// </summary>
     internal class ScaleHubDbContext : DbContext
     {
-        internal const string ServersTable = "__SCALE__SERVERS__";
+        internal const string ServersTable = "scale_servers";
+        private readonly string connString;
 
-        /// <summary>
-        /// Gets or sets the connection string for the database.
-        /// </summary>
-        internal static string ConnString { get; set; } = default!;
+        public ScaleHubDbContext(string connString)
+        {
+            this.connString = connString;
+        }
 
         /// <summary>
         /// Gets or sets the DbSet for storing server information.
@@ -27,7 +28,7 @@ namespace ScaleHub.SqlServer.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(ConnString);
+            optionsBuilder.UseSqlServer(this.connString);
             base.OnConfiguring(optionsBuilder);
         }
     }

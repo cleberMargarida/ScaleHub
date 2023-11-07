@@ -35,8 +35,11 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.0" />
-    <PackageReference Include="ScaleHub.DependecyInjection" Version="0.1.2" />
 	<PackageReference Include="SqlTableDependency" Version="8.5.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ScaleHub.DependecyInjection\ScaleHub.DependecyInjection.csproj" />
   </ItemGroup>
 
   <ItemGroup>

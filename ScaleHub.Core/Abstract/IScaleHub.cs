@@ -27,7 +27,7 @@
         /// Gets the current scale context.
         /// </summary>
         /// <returns>The <see cref="ScaleContext"/> representing the current context.</returns>
-        ScaleContext GetContext();
+        Task<ScaleContext> GetContextAsync();
     }
 
 }

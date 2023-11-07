@@ -24,7 +24,10 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
-    <PackageReference Include="ScaleHub.Core" Version="0.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ScaleHub.Core\ScaleHub.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>
