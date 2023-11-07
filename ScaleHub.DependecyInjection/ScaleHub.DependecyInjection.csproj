@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	<PackageReadmeFile>README.md</PackageReadmeFile>
-	<Version>0.1.2</Version>
+	<Version>0.1.3</Version>
 	<Authors>Cleber Margarida</Authors>
 	<Description>$(AssemblyName) ScaleHub extension for Microsoft.Extensions.DependencyInjection.</Description>
 	<PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -24,10 +24,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\ScaleHub.Core\ScaleHub.Core.csproj" />
+    <PackageReference Include="ScaleHub.Core" Version="0.1.3" />
   </ItemGroup>
 
   <ItemGroup>

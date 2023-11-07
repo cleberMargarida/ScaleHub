@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	<PackageReadmeFile>README.md</PackageReadmeFile>
-	<Version>0.1.2</Version>
+	<Version>0.1.3</Version>
 	<Authors>Cleber Margarida</Authors>
 	<Description>$(AssemblyName) Provide tools for monitoring the number of service replicas in response to changes in the application environment.</Description>
 	<PackageLicenseExpression>MIT</PackageLicenseExpression>
