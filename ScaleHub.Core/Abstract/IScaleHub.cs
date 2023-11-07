@@ -9,7 +9,7 @@
     /// <summary>
     /// Represents a scale hub interface for managing subscriptions and unsubscriptions.
     /// </summary>
-    public interface IScaleHub : IChannel
+    public interface IScaleHub
     {
         /// <summary>
         /// Asynchronously subscribes to the scale hub.
@@ -28,6 +28,12 @@
         /// </summary>
         /// <returns>The <see cref="ScaleContext"/> representing the current context.</returns>
         ScaleContext GetContext();
+
+        /// <summary>
+        /// Asynchronously gets the current scale context.
+        /// </summary>
+        /// <returns>A <see cref="Task"/> of <see cref="ScaleContext"/> representing the asynchronous operation to get the current context.</returns>
+        Task<ScaleContext> GetContextAsync();
     }
 
 }

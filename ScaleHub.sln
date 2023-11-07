@@ -20,9 +20,13 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{555E75F1-2072-4FD9-B5F1-D5540F0DAC5F}"
 	ProjectSection(SolutionItems) = preProject
 		docs\daisy.png = docs\daisy.png
-		README.md = README.md
 		docs\notes.md = docs\notes.md
+		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{047C7B68-93AD-419E-B12A-5A487502DC5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScaleHub.SqlServer.UnitTests", "tests\ScaleHub.SqlServer.UnitTests\ScaleHub.SqlServer.UnitTests.csproj", "{E3F60EBD-D8F3-4C69-BAA5-D7FBB1D134DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,6 +54,10 @@ Global
 		{91F077B1-A79D-45C3-B123-8BBE53750493}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91F077B1-A79D-45C3-B123-8BBE53750493}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91F077B1-A79D-45C3-B123-8BBE53750493}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3F60EBD-D8F3-4C69-BAA5-D7FBB1D134DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3F60EBD-D8F3-4C69-BAA5-D7FBB1D134DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3F60EBD-D8F3-4C69-BAA5-D7FBB1D134DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3F60EBD-D8F3-4C69-BAA5-D7FBB1D134DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +67,7 @@ Global
 		{398BE794-4FC5-40F9-B8C1-E1066CC4A569} = {72DD3AC3-55C4-46C4-8353-02AB86FE5D58}
 		{E60C820A-0C3B-4B83-8DCE-E441639A002B} = {72DD3AC3-55C4-46C4-8353-02AB86FE5D58}
 		{384499E7-8DBB-4D93-BA97-5965CF991434} = {72DD3AC3-55C4-46C4-8353-02AB86FE5D58}
+		{E3F60EBD-D8F3-4C69-BAA5-D7FBB1D134DB} = {047C7B68-93AD-419E-B12A-5A487502DC5A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7CC6AE26-8C11-42DD-8283-FF29ABE82017}
