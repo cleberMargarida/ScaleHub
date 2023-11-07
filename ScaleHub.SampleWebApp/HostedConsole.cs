@@ -9,10 +9,10 @@ internal class HostedConsole : BackgroundService
         this.hub = hub;
     }
 
-    protected override Task ExecuteAsync(CancellationToken stoppingToken)
+    protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        var context = hub.GetContext();
-        return WriteContext(context);
+        var context = await hub.GetContextAsync();
+        await WriteContext(context);
     }
 
     public static Task WriteContext(ScaleContext context)

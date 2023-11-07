@@ -20,7 +20,7 @@ namespace Microsoft.Extensions.DependencyInjection
               this IServiceCollection services
             , Action<ScaleHubConfiguration> options)
         {
-            options(ScaleHubConfiguration.Default);
+            options(ScaleHubConfiguration.Singleton);
             return AddScaleHub(services);
         }
 
@@ -34,14 +34,14 @@ namespace Microsoft.Extensions.DependencyInjection
               this IServiceCollection services
             , Action<ScaleHubConfiguration, IServiceProvider> options)
         {
-            options(ScaleHubConfiguration.Default, services.BuildServiceProvider());
+            options(ScaleHubConfiguration.Singleton, services.BuildServiceProvider());
             return AddScaleHub(services);
         }
 
         private static IServiceCollection AddScaleHub(IServiceCollection services)
         {
-            services.AddSingleton<ISetup>(ScaleHubConfiguration.Default);
-            services.AddSingleton(typeof(IScaleHub), ScaleHubConfiguration.Default.ScaleHub);
+            services.AddSingleton<ISetup>(ScaleHubConfiguration.Singleton);
+            services.AddSingleton(typeof(IScaleHub), ScaleHubConfiguration.Singleton.ScaleHub);
             services.AddHostedService<ScaleHubBackgroundService>();
             return services;
         }

@@ -1,8 +1,4 @@
 ﻿using Microsoft.Extensions.Hosting;
-using System.Runtime.CompilerServices;
-
-[assembly: InternalsVisibleTo("ScaleHub.DependecyInjection")]
-[assembly: InternalsVisibleTo("ScaleHub.SqlServer")]
 
 namespace ScaleHub.Core
 {

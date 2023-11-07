@@ -1,5 +1,4 @@
 ﻿using ScaleHub.Core.Abstract;
-using System.Reflection;
 
 namespace ScaleHub.Core
 {
@@ -11,7 +10,9 @@ namespace ScaleHub.Core
         /// <summary>
         /// Gets the default configuration for a scaling hub.
         /// </summary>
-        internal static ScaleHubConfiguration Default { get; } = new ScaleHubConfiguration();
+        internal static ScaleHubConfiguration Singleton { get; set; } = new ScaleHubConfiguration();
+
+        protected ScaleHubConfiguration() { }
 
         /// <summary>
         /// Gets or sets the type of the scaling hub.
@@ -41,7 +42,7 @@ namespace ScaleHub.Core
         /// <param name="subscription">The action to configure the subscription for the scaling hub.</param>
         public void ConfigureSubs(Action<IChannel> subscription)
         {
-            Subscription = subscription;
+            Singleton.Subscription = subscription;
         }
     }
 
